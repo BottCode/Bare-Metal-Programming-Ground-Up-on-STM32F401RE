@@ -1,1 +1,1 @@
-cd Debug && make && st-flash write 0_led_toggle_addr.bin 0x08000000
+cd Debug && make clean && make && st-flash write 0_led_toggle_addr.bin 0x08000000
