@@ -60,8 +60,8 @@ all: main-build
 main-build: 0_led_toggle_addr.elf secondary-outputs
 
 # Tool invocations
-0_led_toggle_addr.elf: $(OBJS) $(USER_OBJS) /home/mattia/STM32CubeIDE/workspace_1.7.0/0_led_toggle_addr/STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "0_led_toggle_addr.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/mattia/STM32CubeIDE/workspace_1.7.0/0_led_toggle_addr/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0_led_toggle_addr.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+0_led_toggle_addr.elf: $(OBJS) $(USER_OBJS) $(LED_TOGGLE_PATH)/STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "0_led_toggle_addr.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"$(LED_TOGGLE_PATH)/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0_led_toggle_addr.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
