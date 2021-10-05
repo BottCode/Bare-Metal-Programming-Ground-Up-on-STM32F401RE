@@ -64,7 +64,7 @@ int main (void)
 	GPIOA->MODER |= (1U << 10); // Set bit 10 to 1
 	GPIOA->MODER &=~(1U << 11); // Set bit 11 to 0
 
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 1; i++)
 	{
 		// 4. Set PA5 high
 		// GPIOA_OD_R |= LED_PIN;
