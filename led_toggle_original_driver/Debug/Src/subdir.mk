@@ -22,5 +22,5 @@ C_DEPS += \
 
 # Each subdirectory must supply rules for building sources it contributes
 Src/%.o: ../Src/%.c Src/subdir.mk
-	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F401RETx -DSTM32F401xE -DSTM32F4 -c -I../Inc -I$(ST_DRIVER)/CMSIS/Device/ST/STM32F4xx/Include/ -I$(ST_DRIVER)/CMSIS/Core/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F401RETx -DSTM32F401xE -DSTM32F4 -c -I../Inc -I$(ST_DRIVER)/CMSIS/Device/ST/STM32F4xx/Include/ -I$(ST_DRIVER)/CMSIS/Core/Include -I$(PROJECT_ROOT)/ST_Driver_Facade/ -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 
