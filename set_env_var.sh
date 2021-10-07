@@ -1,0 +1,2 @@
+export PROJECT_ROOT=$PWD
+export BSPs_PATH=$PROJECT_ROOT/BSPs

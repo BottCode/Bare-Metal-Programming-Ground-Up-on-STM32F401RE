@@ -52,7 +52,6 @@ OBJDUMP_LIST += \
 OBJCOPY_BIN += \
 0_led_toggle_addr.bin \
 
-
 # All Target
 all: main-build
 
