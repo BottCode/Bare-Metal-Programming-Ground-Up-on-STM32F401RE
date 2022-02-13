@@ -4,8 +4,15 @@ int main (void)
 {
 	uart2_tx_init ();
 
-	while (1)
+	for (int i = 0; i < 10000000; i++)
 	{
-		uart2_write ('Y');
+		if (i%1000000 == 0)
+		{
+			uart2_write ('P');
+			uart2_write ('I');
+			uart2_write ('N');
+			uart2_write ('G');
+			uart2_write ('-');
+		}
 	}
 }
