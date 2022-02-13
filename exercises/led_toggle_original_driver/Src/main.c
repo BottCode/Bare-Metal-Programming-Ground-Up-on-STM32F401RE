@@ -4,8 +4,13 @@ int main (void)
 {
 	LedInit ();
 
-	LedOn ();
-	LedOff ();
+	for (int i = 0; i < 10000000; i++)
+	{
+		if (i%1000000 == 0)
+		{
+			LedToggle ();
+		}
+	}
 
-	LedToggle ();
+	LedOn ();
 }
